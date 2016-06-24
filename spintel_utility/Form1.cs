@@ -17,6 +17,13 @@ namespace spintel_utility
             InitializeComponent();
             var nf4v = new NF4V();
             nf4v.nf4Vsetup();
+           
+        }
+
+        private void configureModem_Click(object sender, EventArgs e)
+        {
+            var nf4v = new NF4V();
+            nf4v.nf4Vsetup();
         }
     }
 }

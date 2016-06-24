@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.configureModem = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // configureModem
+            // 
+            this.configureModem.Location = new System.Drawing.Point(71, 109);
+            this.configureModem.Name = "configureModem";
+            this.configureModem.Size = new System.Drawing.Size(282, 123);
+            this.configureModem.TabIndex = 0;
+            this.configureModem.Text = "button1";
+            this.configureModem.UseVisualStyleBackColor = true;
+            this.configureModem.Click += new System.EventHandler(this.configureModem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 509);
+            this.ClientSize = new System.Drawing.Size(425, 288);
+            this.Controls.Add(this.configureModem);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -42,6 +54,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button configureModem;
     }
 }
 

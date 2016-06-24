@@ -20,8 +20,12 @@ namespace spintel_utility
 
             string _pattern = @"var sessionKey='([^']+)';";
             Match match = Regex.Match(html, _pattern);
+            if(match.Success)
             return match.Groups[1].Value;
-
+            _pattern = @"sessionKey=(.+)';";
+            match = Regex.Match(html, _pattern);
+            
+            return match.Groups[1].Value;
         }
 
         string getModemSerialNumber(String html)
@@ -158,6 +162,21 @@ namespace spintel_utility
             modemURL = "http://192.168.20.1/qsetup.cmd?pppUserName="+ username+"&pppPassword=spin2000&ifname=eth4&portId=0&ptmPriorityNorm=1&ptmPriorityHigh=1&connMode=1&burstsize=3000&enblQos=1&grpPrec=8&grpAlg=WRR&grpWght=1&prec=8&alg=WRR&wght=1&sessionKey=" + sessionKey;
             NF4Vmodem.Navigate(modemURL);
             configureACS(NF4Vmodem);
+            // add inbound firewall table and rules
+            modemURL = "http://192.168.20.1/firewall.cmd?action=view";
+            NF4Vmodem.Navigate(modemURL);
+            sessionKey = getSessionID(NF4Vmodem.CurrentHtml);
+            modemURL = "http://192.168.20.1/firewall.cmd?action=add&objtype=firewall&Name=inbound&interface=&Type=In&defaultAction=Permit&sessionKey=" + sessionKey;
+            NF4Vmodem.Navigate(modemURL);
+            sessionKey = getSessionID(NF4Vmodem.CurrentHtml);
+            modemURL = "http://192.168.20.1/firewall.cmd?action=add&objtype=rule&firwallid=1&enabled=1&IPVersion=4&Protocol=TCP&RuleAction=Permit&RejectType=Null&IcmpType=Null&origIPAddress=202.172.107.0&origMask=255.255.255.0&origStartPort=&origEndPort=&destIPAddress=&destMask=&destStartPort=51003&destEndPort=51003&packetLenMix=&packetLenMax=&dscp=-1&tcpFlag=&sessionKey=" + sessionKey;
+            NF4Vmodem.Navigate(modemURL);
+            sessionKey = getSessionID(NF4Vmodem.CurrentHtml);
+            modemURL = "http://192.168.20.1/firewall.cmd?action=add&objtype=rule&firwallid=1&enabled=1&IPVersion=4&Protocol=TCP&RuleAction=Drop&RejectType=Null&IcmpType=Null&origIPAddress=&origMask=&origStartPort=&origEndPort=&destIPAddress=&destMask=&destStartPort=51003&destEndPort=51003&packetLenMix=&packetLenMax=&dscp=-1&tcpFlag=&sessionKey=" + sessionKey;
+            NF4Vmodem.Navigate(modemURL);
+            NF4Vmodem.Close();
+
+
         }
 
 
