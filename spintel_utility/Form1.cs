@@ -16,7 +16,7 @@ namespace spintel_utility
         {
             InitializeComponent();
             var nf4v = new NF4V();
-            nf4v.nf4Vsetup();
+           // nf4v.nf4Vsetup();
            
         }
 
