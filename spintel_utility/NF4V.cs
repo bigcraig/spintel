@@ -74,6 +74,15 @@ namespace spintel_utility
 
             return (macAddress);
         }
+        void saveModemDefaults(Browser modem,string port)
+        {
+            string modemURL = "http://192.168.20.1:" + port;
+            modem.Navigate(modemURL + "/configdefaultlogin.html");
+            modem.Navigate(modemURL + "/configdefault.cgi?thirdConfigMode=3&cdUser=root&cdPwd=netcommdefault");
+            modem.Navigate(modemURL + "/configdefault.cgi?thirdConfigMode=1");
+
+
+        }
         string getModemModel(string html)
         {
             string modemtype = "default";
@@ -120,7 +129,7 @@ namespace spintel_utility
 
         public void nf4Vsetup()
         {
-            getModemMACTelnet();
+           // getModemMACTelnet();
             var NF4Vmodem = new Browser();
             Browser.RefererModes ModemBrowserMode;
             // add referrer for NF4V"
@@ -211,6 +220,7 @@ namespace spintel_utility
             NF4Vmodem.Navigate(modemURL);
             configureVoip(NF4Vmodem);
             configureServices(NF4Vmodem);
+            saveModemDefaults(NF4Vmodem,"51003");
             NF4Vmodem.Close();
 
 
