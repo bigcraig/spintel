@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CraigTelnet">
+      <HintPath>..\..\CraigTelnet\CraigTelnet\bin\Debug\CraigTelnet.dll</HintPath>
+    </Reference>
     <Reference Include="RazorHosting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleBrowser.0.5.79.0\lib\net40\RazorHosting.dll</HintPath>
       <Private>True</Private>

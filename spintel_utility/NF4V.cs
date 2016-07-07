@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using CraigTelnet;
 
 namespace spintel_utility
 {
@@ -33,11 +34,45 @@ namespace spintel_utility
            
             string _pattern = @"\{(\d{12})\}";
             Match match = Regex.Match(html, _pattern);
+            if(match.Success)
             return match.Groups[1].Value;
+
+            // NF10WV doesnt have braces around serial number value, will attempt polymorphism through using return on match
+            _pattern = @"\>(\d{12})\<";
+            match = Regex.Match(html, _pattern);
+            if (match.Success)
+                return match.Groups[1].Value;
+            return("fail");
+
+
+
+        }
+        string getModemMACTelnet()
+        {
+            //currently assume telnet is active which is the case with NF10W(V)
+            TelnetConnection tc = new TelnetConnection("192.168.20.1", 23);
+
+            //login with user "root",password "rootpassword", using a timeout of 100ms, and show server output
+            string s = tc.Login("admin", "admin", 100);
+            Console.Write(s);
+
+            // server output should end with "$" or ">", otherwise the connection failed
+            string prompt = s.TrimEnd();
+            prompt = s.Substring(prompt.Length - 1, 1);
+            if (prompt != "$" && prompt != ">")
+                throw new Exception("Connection failed");
+
+            tc.WriteLine("macaddr");
+            string output = tc.Read();
+            string[] result = output.Split(new string[] { "\n", "\r\n" },
+             StringSplitOptions.RemoveEmptyEntries);
+            string macAddress = result[1];
+            // close telnet session
+            tc.WriteLine("exit");
             
 
-         
 
+            return (macAddress);
         }
         string getModemModel(string html)
         {
@@ -85,7 +120,7 @@ namespace spintel_utility
 
         public void nf4Vsetup()
         {
-
+            getModemMACTelnet();
             var NF4Vmodem = new Browser();
             Browser.RefererModes ModemBrowserMode;
             // add referrer for NF4V"
