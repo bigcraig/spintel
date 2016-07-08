@@ -124,7 +124,34 @@ namespace spintel_utility
             // Console.Write(_acspost);
             return (_acspost);
         }
+       
+        public  Browser initialiseModem()
+        {
+            var NF4Vmodem = new Browser();
+            Browser.RefererModes ModemBrowserMode;
+            // add referrer for NF4V"
+            ModemBrowserMode = Browser.RefererModes.OriginWhenCrossOrigin;
+            // add referrer for NF4V"
 
+
+            NF4Vmodem.RefererMode = ModemBrowserMode;
+            var modemURL = "http://192.168.20.1/";
+
+            int timeOut = 3000;
+            NF4Vmodem.Navigate(modemURL, timeOut);
+
+            if (NF4Vmodem.RequestData().ResponseCode != 401)
+            {
+
+                configureModem = "modem is not online, please connect,wait and click again";
+                return NF4Vmodem;
+            }
+
+            //    Console.Write("get url");
+            //    modem.BasicAuthenticationLogin("Broadband Router","admin","admin");
+            NF4Vmodem.BasicAuthenticationLogin("192.168.20.1", "admin", "admin");
+            return NF4Vmodem;
+        }
 
 
         public void nf4Vsetup()
@@ -260,7 +287,7 @@ namespace spintel_utility
 
 
         }
-        void configureVoip(Browser modem,string sipDomain, string sipProxy, string login, string password)
+        public void configureVoip(Browser modem,string sipDomain, string sipProxy, string login, string password)
         {  
             var modemURL = "http://192.168.20.1/voicesip_basic.html";
             //var sipDomain = "sip.iboss.com.au";
@@ -270,7 +297,7 @@ namespace spintel_utility
             modemURL = "http://192.168.20.1/voicesipapply.cmd?currentview=basic&ifName=Any_WAN&localeName=AUS&proxyAddr0="
                 +sipProxy +"&proxyPort0=5060&obProxyAddr0=" 
                 + sipProxy +
-                "&obProxyPort0=5060&regAddr0=" + sipDomain +"regAddr&regPort0=5060&domainName0=" +sipDomain +
+                "&obProxyPort0=5060&regAddr0=" + sipDomain +"&regPort0=5060&domainName0=" +sipDomain +
                 "&proxyAddr20=0.0.0.0&proxyPort20=5060&obProxyAddr20=0.0.0.0&obProxyPort20=5060&regAddr20=0.0.0.0&regPort20=5060&siplocalport0=5060&authName0_0="
                 + login + "&password0_0=" + password +"&cidName0_0="
                 + login +"&cidNumber0_0=" 

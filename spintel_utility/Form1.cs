@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleBrowser;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,13 @@ namespace spintel_utility
         {
             var nf4v = new NF4V();
             nf4v.nf4Vsetup();
+        }
+
+        private void voipButton_Click(object sender, EventArgs e)
+        {
+            var nf4v = new NF4V();
+            Browser nf10wModem = nf4v.initialiseModem();
+            nf4v.configureVoip(nf10wModem,"sip.iboss.com.au", "sip.iboss.com.au", "09802390000610", "F2P66PB3");
         }
     }
 }
