@@ -125,9 +125,9 @@ namespace spintel_utility
             return (_acspost);
         }
        
-        public  Browser initialiseModem()
+        public  void initialiseModem(Browser NF4Vmodem)
         {
-            var NF4Vmodem = new Browser();
+           // var NF4Vmodem = new Browser();
             Browser.RefererModes ModemBrowserMode;
             // add referrer for NF4V"
             ModemBrowserMode = Browser.RefererModes.OriginWhenCrossOrigin;
@@ -140,17 +140,20 @@ namespace spintel_utility
             int timeOut = 3000;
             NF4Vmodem.Navigate(modemURL, timeOut);
 
-            if (NF4Vmodem.RequestData().ResponseCode != 401)
+           if (NF4Vmodem.RequestData().ResponseCode != 401)
             {
 
                 configureModem = "modem is not online, please connect,wait and click again";
-                return NF4Vmodem;
+                return;
             }
 
             //    Console.Write("get url");
-            //    modem.BasicAuthenticationLogin("Broadband Router","admin","admin");
+            //    modem.BasicAuthenticationLogin("Broadband Router","admin","admin");   
             NF4Vmodem.BasicAuthenticationLogin("192.168.20.1", "admin", "admin");
-            return NF4Vmodem;
+            modemURL = "http://192.168.20.1";
+
+            NF4Vmodem.Navigate(modemURL);
+            return;
         }
 
 

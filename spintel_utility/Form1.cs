@@ -30,7 +30,8 @@ namespace spintel_utility
         private void voipButton_Click(object sender, EventArgs e)
         {
             var nf4v = new NF4V();
-            Browser nf10wModem = nf4v.initialiseModem();
+            Browser nf10wModem = new Browser();
+             nf4v.initialiseModem(nf10wModem);
             nf4v.configureVoip(nf10wModem,"sip.iboss.com.au", "sip.iboss.com.au", "09802390000610", "F2P66PB3");
         }
     }
