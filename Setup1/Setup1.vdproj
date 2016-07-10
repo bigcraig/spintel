@@ -321,9 +321,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup1"
+        "ProductName" = "8:RamVoIP"
         "ProductCode" = "8:{2AE036F5-2A3B-469F-A9E7-0C2ABD0AE36D}"
-        "PackageCode" = "8:{514165C9-B044-43B5-BB3B-0F988C603D75}"
+        "PackageCode" = "8:{1B5894B4-74B2-4573-A7C2-AD7EA1DC349D}"
         "UpgradeCode" = "8:{979CCF18-14AD-49DA-9514-43DEBF481552}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -336,7 +336,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:Setup1"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:NetcommWireless"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -445,7 +445,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_50CFD462DE8141E49793F32671BF6EE1"
             {
-            "Name" = "8:Shortcut to Primary output from spintel_utility (Active)"
+            "Name" = "8:Ram VoIP"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -459,7 +459,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6AEE5AA445424BDE976668CE02D2B415"
             {
-            "Name" = "8:Shortcut to Primary output from spintel_utility (Active)"
+            "Name" = "8:Ram VoIP"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
