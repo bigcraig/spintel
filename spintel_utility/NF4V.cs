@@ -300,7 +300,7 @@ namespace spintel_utility
             modemURL = "http://192.168.20.1/voicesipapply.cmd?currentview=basic&ifName=Any_WAN&localeName=AUS&proxyAddr0="
                 +sipProxy +"&proxyPort0=5060&obProxyAddr0=" 
                 + sipProxy +
-                "&obProxyPort0=5060&regAddr0=" + sipDomain +"&regPort0=5060&domainName0=" +sipDomain +
+                "&obProxyPort0=5060&regAddr0=" + sipDomain +"&regPort0=5060&domainName0=" /*+sipDomain */ +
                 "&proxyAddr20=0.0.0.0&proxyPort20=5060&obProxyAddr20=0.0.0.0&obProxyPort20=5060&regAddr20=0.0.0.0&regPort20=5060&siplocalport0=5060&authName0_0="
                 + login + "&password0_0=" + password +"&cidName0_0="
                 + login +"&cidNumber0_0=" 
