@@ -36,10 +36,15 @@ namespace spintel_utility
             sipPassword = sipPasswordText.Text;
         }
 
+        private void Status_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public Form1()
         {
             InitializeComponent();
-            var nf4v = new NF4V();
+          //  var nf4v = new NF4V();
            // nf4v.nf4Vsetup();
            
         }
@@ -53,10 +58,15 @@ namespace spintel_utility
 
         private void voipButton_Click(object sender, EventArgs e)
         {
+            Status.Text = "VOIP Configfuration in Progress";
             var nf4v = new NF4V();
             Browser nf10wModem = new Browser();
-             nf4v.initialiseModem(nf10wModem);
-            nf4v.configureVoip(nf10wModem,sipDomain, sipProxy, sipUser, sipPassword);
+            Status.Text = nf4v.initialiseModem(nf10wModem);
+            if (Status.Text == "Configuration in progress")
+            {
+                nf4v.configureVoip(nf10wModem, sipDomain, sipProxy, sipUser, sipPassword);
+                Status.Text = "VOIP Configured";
+            }
         }
     }
 }

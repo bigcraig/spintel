@@ -125,7 +125,7 @@ namespace spintel_utility
             return (_acspost);
         }
        
-        public  void initialiseModem(Browser NF4Vmodem)
+        public  string initialiseModem(Browser NF4Vmodem)
         {
            // var NF4Vmodem = new Browser();
             Browser.RefererModes ModemBrowserMode;
@@ -144,7 +144,7 @@ namespace spintel_utility
             {
 
                 configureModem = "modem is not online, please connect,wait and click again";
-                return;
+                return (configureModem);
             }
 
             //    Console.Write("get url");
@@ -153,7 +153,7 @@ namespace spintel_utility
             modemURL = "http://192.168.20.1";
 
             NF4Vmodem.Navigate(modemURL);
-            return;
+            return ("Configuration in progress");
         }
 
 
@@ -306,11 +306,11 @@ namespace spintel_utility
                 + login +"&cidNumber0_0=" 
                 + login +"&lineEnabled0_0=on&polarityreverseEnable0_0=off&codecList0_0=G711U,20,2,1:G711A,20,3,1:G729,20,1,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&authName0_1=&password0_1=&cidName0_1=&cidNumber0_1=&lineEnabled0_1=on&polarityreverseEnable0_1=off&codecList0_1=G711U,20,1,1:G711A,20,2,1:G729,20,3,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&sessionKey=" + sessionKey;
             modem.Navigate(modemURL);
-            modemURL = "http://192.168.20.1/voicesip_advanced.html";
+       /*     modemURL = "http://192.168.20.1/voicesip_advanced.html";
             modem.Navigate(modemURL);
             sessionKey = getSessionID(modem.CurrentHtml);
             modemURL = "http://192.168.20.1/voicesipapply.cmd?voicesipapply.cmd?currentview=advanced&sessExpireTime0=1800&minSessExpireTime0=90&enLocalFeature0=0&MaliciousFeatureEnable0=0&vadEnable0=off&vadShowMode0=0&t38Enable0=off&vtpvbdEnable0=off&t38RedundancyEnable0=on&vtpRTCPEnable0=off&EchoCancellation0=on&vtpvbdRedundancyEnable0=off&uripounddata0=off&CwCidEnable0=on&fskMode0=BELL&callIdMsgType0=MDMF&callIdDelayTime0=600&transport0=UDP&regExpTmr0=3600&tosByteRtp0=46&tosByteSip0=46&dtmfRelay0=InBand&Rel100Resp0=1&EthPriorityMark0=-1&RTPPayload0=125&faxNegoMode0=Auto_switch&vbdCodec0=G711_A&vtpv152vbdEnable0=off&dialPlan0=000%7C%5B*%23%5DX%5B0-9*%5D.%23%7C**XX%7C*%23X%5B0-9*%5D.%23%7C%23*x%5B0-9*%5D.%23%7C00%5B1-9%5Dxx.t%7C014XXXXXXX%7C016XXXXXX%7C0192X%7C0198XXXXXX%7C0%5B23478%5DXXXXXXXX%7C0500XXXXXX%7C11XX%7C123X%7C124XX%7C1251XX%7C1252XXX%7C1255X%7C1258XXX%7C1271X%7C130XXXXXXX%7C1802XXX%7C189XX%7C1%5B8-9%5DXXXXXXXX%7C%5B2-9%5DXXXXXXX%7C13%5B1-9%5DXXX&callwait0_0=on&fwdAll0_0=on&fwdBusy0_0=on&fwdNoAns0_0=on&mwi0_0=off&anonBlock0_0=on&anonCall0_0=on&anonCallMode0_0=display&doNotDisturb0_0=on&fwduNum0_0=&fwdbNum0_0=&fwdnNum0_0=&OptionsTime0_0=0&callReturnEnable0_0=on&calltransfer0_0=on&callconference0_0=on&speedDial0_0=off&speedDialMap0_0=00=;01=;02=;03=;04=;05=;06=;07=;08=;09=;&callwait0_1=on&fwdAll0_1=on&fwdBusy0_1=on&fwdNoAns0_1=on&mwi0_1=off&anonBlock0_1=on&anonCall0_1=on&anonCallMode0_1=display&doNotDisturb0_1=on&fwduNum0_1=&fwdbNum0_1=&fwdnNum0_1=&OptionsTime0_1=0&callReturnEnable0_1=on&calltransfer0_1=on&callconference0_1=on&speedDial0_1=off&speedDialMap0_1=00=;01=;02=;03=;04=;05=;06=;07=;08=;09=;&pstnPrefix=9&sessionKey=" + sessionKey;
-            modem.Navigate(modemURL);
+            modem.Navigate(modemURL);  */
 
 
 
