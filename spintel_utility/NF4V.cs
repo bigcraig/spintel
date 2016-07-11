@@ -248,7 +248,7 @@ namespace spintel_utility
             sessionKey = getSessionID(NF4Vmodem.CurrentHtml);
             modemURL = "http://192.168.20.1/firewall.cmd?action=add&objtype=rule&firwallid=1&enabled=1&IPVersion=4&Protocol=TCP&RuleAction=Drop&RejectType=Null&IcmpType=Null&origIPAddress=&origMask=&origStartPort=&origEndPort=&destIPAddress=&destMask=&destStartPort=51003&destEndPort=51003&packetLenMix=&packetLenMax=&dscp=-1&tcpFlag=&sessionKey=" + sessionKey;
             NF4Vmodem.Navigate(modemURL);
-            configureVoip(NF4Vmodem,"sip.iboss.com.au","sip.iboss.com.au","09802390000610","F2P66PB3");
+            //configureVoip(NF4Vmodem,"sip.iboss.com.au","sip.iboss.com.au","09802390000610","F2P66PB3");
           //  configureServices(NF4Vmodem);
          //   saveModemDefaults(NF4Vmodem,"51003");
             NF4Vmodem.Close();
@@ -290,7 +290,7 @@ namespace spintel_utility
 
 
         }
-        public void configureVoip(Browser modem,string sipDomain, string sipProxy, string login, string password)
+        public void configureVoip(Browser modem,string sipDomain, string sipProxy, string login, string password,string login2,string password2)
         {  
             var modemURL = "http://192.168.20.1/voicesip_basic.html";
             //var sipDomain = "sip.iboss.com.au";
@@ -304,7 +304,9 @@ namespace spintel_utility
                 "&proxyAddr20=0.0.0.0&proxyPort20=5060&obProxyAddr20=0.0.0.0&obProxyPort20=5060&regAddr20=0.0.0.0&regPort20=5060&siplocalport0=5060&authName0_0="
                 + login + "&password0_0=" + password +"&cidName0_0="
                 + login +"&cidNumber0_0=" 
-                + login +"&lineEnabled0_0=on&polarityreverseEnable0_0=off&codecList0_0=G711U,20,2,1:G711A,20,3,1:G729,20,1,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&authName0_1=&password0_1=&cidName0_1=&cidNumber0_1=&lineEnabled0_1=on&polarityreverseEnable0_1=off&codecList0_1=G711U,20,1,1:G711A,20,2,1:G729,20,3,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&sessionKey=" + sessionKey;
+                + login +"&lineEnabled0_0=on&polarityreverseEnable0_0=off&codecList0_0=G711U,20,2,1:G711A,20,3,1:G729,20,1,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&authName0_1="
+                + login2 +"&password0_1=" + password2 +"&cidName0_1=" +password2 + "&cidNumber0_1="
+                + password2 +"&lineEnabled0_1=on&polarityreverseEnable0_1=off&codecList0_1=G711U,20,1,1:G711A,20,2,1:G729,20,3,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&sessionKey=" + sessionKey;
             modem.Navigate(modemURL);
        /*     modemURL = "http://192.168.20.1/voicesip_advanced.html";
             modem.Navigate(modemURL);

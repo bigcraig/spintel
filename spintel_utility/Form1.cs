@@ -13,7 +13,7 @@ namespace spintel_utility
 {
     public partial class Form1 : Form
     {
-        string sipDomain, sipProxy, sipUser, sipPassword;
+        string sipDomain, sipProxy, sipUser, sipPassword, sipUser2, sipPassword2;
 
         private void sipDomainText_TextChanged(object sender, EventArgs e)
         {
@@ -41,6 +41,22 @@ namespace spintel_utility
 
         }
 
+        private void sipPassword2Text_TextChanged(object sender, EventArgs e)
+        {
+            sipPassword2 = sipPassword2Text.Text;
+        }
+
+        private void eraseLine2_Click(object sender, EventArgs e)
+        {
+            sipUser2Text.Text = "";
+            sipPassword2Text.Text = "";
+        }
+
+        private void sipUser2Text_TextChanged(object sender, EventArgs e)
+        {
+            sipUser2 = sipUser2Text.Text;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -64,8 +80,9 @@ namespace spintel_utility
             Status.Text = nf4v.initialiseModem(nf10wModem);
             if (Status.Text == "Configuration in progress")
             {
-                nf4v.configureVoip(nf10wModem, sipDomain, sipProxy, sipUser, sipPassword);
+                nf4v.configureVoip(nf10wModem, sipDomain, sipProxy, sipUser, sipPassword,sipUser2,sipPassword2);
                 Status.Text = "VOIP Configured";
+                nf10wModem.Close();
             }
         }
     }

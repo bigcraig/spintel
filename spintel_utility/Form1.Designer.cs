@@ -38,11 +38,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Status = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.sipPassword2Text = new System.Windows.Forms.TextBox();
+            this.sipUser2Text = new System.Windows.Forms.TextBox();
+            this.eraseLine2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // voipButton
             // 
-            this.voipButton.Location = new System.Drawing.Point(9, 180);
+            this.voipButton.Location = new System.Drawing.Point(5, 351);
             this.voipButton.Name = "voipButton";
             this.voipButton.Size = new System.Drawing.Size(154, 71);
             this.voipButton.TabIndex = 1;
@@ -124,17 +130,77 @@
             this.Status.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status.ForeColor = System.Drawing.Color.Red;
-            this.Status.Location = new System.Drawing.Point(169, 209);
+            this.Status.Location = new System.Drawing.Point(188, 380);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(194, 13);
             this.Status.TabIndex = 10;
             this.Status.TextChanged += new System.EventHandler(this.Status_TextChanged);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(63, 233);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Password";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(43, 198);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Username /Number";
+            // 
+            // sipPassword2Text
+            // 
+            this.sipPassword2Text.Location = new System.Drawing.Point(163, 234);
+            this.sipPassword2Text.Name = "sipPassword2Text";
+            this.sipPassword2Text.Size = new System.Drawing.Size(166, 20);
+            this.sipPassword2Text.TabIndex = 12;
+            this.sipPassword2Text.TextChanged += new System.EventHandler(this.sipPassword2Text_TextChanged);
+            // 
+            // sipUser2Text
+            // 
+            this.sipUser2Text.Location = new System.Drawing.Point(163, 198);
+            this.sipUser2Text.Name = "sipUser2Text";
+            this.sipUser2Text.Size = new System.Drawing.Size(166, 20);
+            this.sipUser2Text.TabIndex = 11;
+            this.sipUser2Text.TextChanged += new System.EventHandler(this.sipUser2Text_TextChanged);
+            // 
+            // eraseLine2
+            // 
+            this.eraseLine2.Location = new System.Drawing.Point(187, 277);
+            this.eraseLine2.Name = "eraseLine2";
+            this.eraseLine2.Size = new System.Drawing.Size(130, 44);
+            this.eraseLine2.TabIndex = 15;
+            this.eraseLine2.Text = "Clear Line 2";
+            this.eraseLine2.UseVisualStyleBackColor = true;
+            this.eraseLine2.Click += new System.EventHandler(this.eraseLine2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(137, 170);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 16);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Line 2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 288);
+            this.ClientSize = new System.Drawing.Size(404, 456);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.eraseLine2);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.sipPassword2Text);
+            this.Controls.Add(this.sipUser2Text);
             this.Controls.Add(this.Status);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -163,6 +229,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Status;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox sipPassword2Text;
+        private System.Windows.Forms.TextBox sipUser2Text;
+        private System.Windows.Forms.Button eraseLine2;
+        private System.Windows.Forms.Label label7;
     }
 }
 

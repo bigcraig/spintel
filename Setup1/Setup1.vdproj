@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_246E656C6FB5A602617BA1D248157A75"
+        "MsmKey" = "8:_23713C481966F283FFCD9AA03D0CEE7B"
         "OwnerKey" = "8:_3F8568B34A4742A48F55735031F64854"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,7 +27,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A9652BCC1028D8BA8202FC1596396CC9"
+        "MsmKey" = "8:_5FEDEBC5C5C640274A1563E491265D66"
         "OwnerKey" = "8:_3F8568B34A4742A48F55735031F64854"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -39,44 +39,44 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E3F86E13C7F084764717EBD6B5CA8707"
+        "MsmKey" = "8:_DFE4A92659139C8413395FC117409D77"
         "OwnerKey" = "8:_3F8568B34A4742A48F55735031F64854"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E3F86E13C7F084764717EBD6B5CA8707"
-        "OwnerKey" = "8:_A9652BCC1028D8BA8202FC1596396CC9"
+        "MsmKey" = "8:_DFE4A92659139C8413395FC117409D77"
+        "OwnerKey" = "8:_5FEDEBC5C5C640274A1563E491265D66"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3F8568B34A4742A48F55735031F64854"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5FEDEBC5C5C640274A1563E491265D66"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DFE4A92659139C8413395FC117409D77"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_23713C481966F283FFCD9AA03D0CEE7B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C0124196642598BD14D4EF4F78869B73"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3F8568B34A4742A48F55735031F64854"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A9652BCC1028D8BA8202FC1596396CC9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E3F86E13C7F084764717EBD6B5CA8707"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_246E656C6FB5A602617BA1D248157A75"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -97,6 +97,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -113,6 +121,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -142,14 +158,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_246E656C6FB5A602617BA1D248157A75"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_23713C481966F283FFCD9AA03D0CEE7B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:CraigTelnet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_246E656C6FB5A602617BA1D248157A75"
+                    "_23713C481966F283FFCD9AA03D0CEE7B"
                     {
                     "Name" = "8:CraigTelnet.dll"
                     "Attributes" = "3:512"
@@ -173,14 +189,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A9652BCC1028D8BA8202FC1596396CC9"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5FEDEBC5C5C640274A1563E491265D66"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:SimpleBrowser, Version=0.5.79.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A9652BCC1028D8BA8202FC1596396CC9"
+                    "_5FEDEBC5C5C640274A1563E491265D66"
                     {
                     "Name" = "8:SimpleBrowser.dll"
                     "Attributes" = "3:512"
@@ -235,14 +251,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E3F86E13C7F084764717EBD6B5CA8707"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DFE4A92659139C8413395FC117409D77"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:RazorHosting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E3F86E13C7F084764717EBD6B5CA8707"
+                    "_DFE4A92659139C8413395FC117409D77"
                     {
                     "Name" = "8:RazorHosting.dll"
                     "Attributes" = "3:512"
@@ -331,7 +347,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:NetcommWireless"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Setup1"
