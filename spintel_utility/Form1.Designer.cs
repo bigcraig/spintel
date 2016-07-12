@@ -44,6 +44,17 @@
             this.sipUser2Text = new System.Windows.Forms.TextBox();
             this.eraseLine2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.wanIPText = new System.Windows.Forms.TextBox();
+            this.secondaryDNSText = new System.Windows.Forms.TextBox();
+            this.primaryDNSText = new System.Windows.Forms.TextBox();
+            this.wanGatewayIPText = new System.Windows.Forms.TextBox();
+            this.wanSubnetText = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.staticIPoEButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // voipButton
@@ -190,11 +201,115 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Line 2";
             // 
+            // wanIPText
+            // 
+            this.wanIPText.Location = new System.Drawing.Point(591, 21);
+            this.wanIPText.Name = "wanIPText";
+            this.wanIPText.Size = new System.Drawing.Size(166, 20);
+            this.wanIPText.TabIndex = 17;
+            this.wanIPText.TextChanged += new System.EventHandler(this.wanIPText_TextChanged);
+            // 
+            // secondaryDNSText
+            // 
+            this.secondaryDNSText.Location = new System.Drawing.Point(591, 168);
+            this.secondaryDNSText.Name = "secondaryDNSText";
+            this.secondaryDNSText.Size = new System.Drawing.Size(166, 20);
+            this.secondaryDNSText.TabIndex = 18;
+            // 
+            // primaryDNSText
+            // 
+            this.primaryDNSText.Location = new System.Drawing.Point(591, 130);
+            this.primaryDNSText.Name = "primaryDNSText";
+            this.primaryDNSText.Size = new System.Drawing.Size(166, 20);
+            this.primaryDNSText.TabIndex = 19;
+            // 
+            // wanGatewayIPText
+            // 
+            this.wanGatewayIPText.Location = new System.Drawing.Point(591, 92);
+            this.wanGatewayIPText.Name = "wanGatewayIPText";
+            this.wanGatewayIPText.Size = new System.Drawing.Size(166, 20);
+            this.wanGatewayIPText.TabIndex = 20;
+            this.wanGatewayIPText.TextChanged += new System.EventHandler(this.wanGatewayIPText_TextChanged);
+            // 
+            // wanSubnetText
+            // 
+            this.wanSubnetText.Location = new System.Drawing.Point(591, 59);
+            this.wanSubnetText.Name = "wanSubnetText";
+            this.wanSubnetText.Size = new System.Drawing.Size(166, 20);
+            this.wanSubnetText.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(419, 175);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Secondary DNS Server";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(419, 137);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Primary DNS Server";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(419, 94);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(126, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Wan gateway IP address";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(424, 59);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Wan Subnet Mask";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(419, 26);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 13);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "WAN IP address";
+            // 
+            // staticIPoEButton
+            // 
+            this.staticIPoEButton.Location = new System.Drawing.Point(577, 254);
+            this.staticIPoEButton.Name = "staticIPoEButton";
+            this.staticIPoEButton.Size = new System.Drawing.Size(208, 79);
+            this.staticIPoEButton.TabIndex = 27;
+            this.staticIPoEButton.Text = "Configure Static IP";
+            this.staticIPoEButton.UseVisualStyleBackColor = true;
+            this.staticIPoEButton.Click += new System.EventHandler(this.staticIPoEButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 456);
+            this.ClientSize = new System.Drawing.Size(825, 456);
+            this.Controls.Add(this.staticIPoEButton);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.wanSubnetText);
+            this.Controls.Add(this.wanGatewayIPText);
+            this.Controls.Add(this.primaryDNSText);
+            this.Controls.Add(this.secondaryDNSText);
+            this.Controls.Add(this.wanIPText);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.eraseLine2);
             this.Controls.Add(this.label5);
@@ -235,6 +350,17 @@
         private System.Windows.Forms.TextBox sipUser2Text;
         private System.Windows.Forms.Button eraseLine2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox wanIPText;
+        private System.Windows.Forms.TextBox secondaryDNSText;
+        private System.Windows.Forms.TextBox primaryDNSText;
+        private System.Windows.Forms.TextBox wanGatewayIPText;
+        private System.Windows.Forms.TextBox wanSubnetText;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button staticIPoEButton;
     }
 }
 

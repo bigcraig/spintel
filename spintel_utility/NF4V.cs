@@ -305,8 +305,8 @@ namespace spintel_utility
                 + login + "&password0_0=" + password +"&cidName0_0="
                 + login +"&cidNumber0_0=" 
                 + login +"&lineEnabled0_0=on&polarityreverseEnable0_0=off&codecList0_0=G711U,20,2,1:G711A,20,3,1:G729,20,1,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&authName0_1="
-                + login2 +"&password0_1=" + password2 +"&cidName0_1=" +password2 + "&cidNumber0_1="
-                + password2 +"&lineEnabled0_1=on&polarityreverseEnable0_1=off&codecList0_1=G711U,20,1,1:G711A,20,2,1:G729,20,3,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&sessionKey=" + sessionKey;
+                + login2 +"&password0_1=" + password2 +"&cidName0_1=" +login2 + "&cidNumber0_1="
+                + login2  +"&lineEnabled0_1=on&polarityreverseEnable0_1=off&codecList0_1=G711U,20,1,1:G711A,20,2,1:G729,20,3,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&sessionKey=" + sessionKey;
             modem.Navigate(modemURL);
        /*     modemURL = "http://192.168.20.1/voicesip_advanced.html";
             modem.Navigate(modemURL);
@@ -316,6 +316,26 @@ namespace spintel_utility
 
 
 
+        }
+
+        public void configureStaticIPoEVDSL(Browser modem, string wanIpAddress, string subNetMask, string gatewayIP, string pDNS,string sDNS)
+        {
+            var modemURL =  "http://192.168.20.1/qinetsetup.html";
+            modem.Navigate(modemURL);
+            string sessionKey = getSessionID(modem.CurrentHtml);
+            modemURL = "http://192.168.20.1/qvdslwanmode.cgi?wanType=2&sessionKey=" + sessionKey;
+            modem.Navigate(modemURL);
+            sessionKey = getSessionID(modem.CurrentHtml);
+            modemURL = "http://192.168.20.1/qipoe.cgi?wanL2IfName=ptm0/(0_1_1)&ntwkPrtcl=2&enblv6=0&enVlanMux=0&vlanMuxId=-1&vlanMuxPr=-1&serviceName=ipoe_0_1_1&sessionKey=" + sessionKey;
+            modem.Navigate(modemURL);
+            sessionKey = getSessionID(modem.CurrentHtml);
+            modemURL = "http://192.168.20.1/qntwksum.cgi?enblDhcpClnt=0&wanIpAddress="
+                +   wanIpAddress + "&wanSubnetMask="+ subNetMask + "&wanIntfGateway=" + gatewayIP + "&wanInfDnsPrimary="
+                +  pDNS + "&wanInfDnsSecondary="+ sDNS + "&enblv4=1&enblNat=1&enblFullcone=0&enblFirewall=1&enblIgmp=0&enblMld=0&sessionKey="+ sessionKey;
+            modem.Navigate(modemURL);
+            sessionKey = getSessionID(modem.CurrentHtml);
+            modemURL = "http://192.168.20.1/qsetup.cmd?portId=0&ptmPriorityNorm=1&ptmPriorityHigh=1&connMode=1&burstsize=3000&enblQos=1&grpPrec=8&grpAlg=WRR&grpWght=1&prec=8&alg=WRR&wght=1&sessionKey=" + sessionKey;
+            modem.Navigate(modemURL);
         }
     }
 }

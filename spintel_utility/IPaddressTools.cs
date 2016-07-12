@@ -20,17 +20,17 @@ namespace spintel_utility
             return (uint)BitConverter.ToInt32(bytes, 0);
         }
 
-        string incrementIPaddress(String ipIn, int offset)
+        public string decrementIPaddress(String ipIn, uint offset)
         {
-            IPAddress Realip = IPAddress.Parse("61.69.101.118");
+            IPAddress Realip = IPAddress.Parse(ipIn);
             byte[] byteIP = Realip.GetAddressBytes();
-            var byteIP3 = byteIP[3] + 1;
+           
             uint ip = (uint)byteIP[3] << 24;
             ip += (uint)byteIP[2] << 16;
             ip += (uint)byteIP[1] << 8;
             ip += (uint)byteIP[0];
             ip = reverseBytesArray(ip);
-            ip = ip + 1;
+            ip = ip - offset;
             ip = reverseBytesArray(ip);
             return (LongToIPAddress(ip));
 
