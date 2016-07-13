@@ -55,6 +55,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.staticIPoEButton = new System.Windows.Forms.Button();
+            this.StaticIPoEEthernet = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // voipButton
@@ -77,7 +79,7 @@
             // 
             // sipUserText
             // 
-            this.sipUserText.Location = new System.Drawing.Point(163, 94);
+            this.sipUserText.Location = new System.Drawing.Point(163, 111);
             this.sipUserText.Name = "sipUserText";
             this.sipUserText.Size = new System.Drawing.Size(166, 20);
             this.sipUserText.TabIndex = 3;
@@ -93,7 +95,7 @@
             // 
             // sipPasswordText
             // 
-            this.sipPasswordText.Location = new System.Drawing.Point(163, 130);
+            this.sipPasswordText.Location = new System.Drawing.Point(163, 147);
             this.sipPasswordText.Name = "sipPasswordText";
             this.sipPasswordText.Size = new System.Drawing.Size(166, 20);
             this.sipPasswordText.TabIndex = 5;
@@ -120,7 +122,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 129);
+            this.label3.Location = new System.Drawing.Point(63, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 9;
@@ -129,7 +131,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 94);
+            this.label4.Location = new System.Drawing.Point(43, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 8;
@@ -139,18 +141,18 @@
             // 
             this.Status.BackColor = System.Drawing.SystemColors.Control;
             this.Status.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status.ForeColor = System.Drawing.Color.Red;
-            this.Status.Location = new System.Drawing.Point(188, 380);
+            this.Status.Location = new System.Drawing.Point(217, 375);
             this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(194, 13);
+            this.Status.Size = new System.Drawing.Size(555, 19);
             this.Status.TabIndex = 10;
             this.Status.TextChanged += new System.EventHandler(this.Status_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 233);
+            this.label5.Location = new System.Drawing.Point(63, 250);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 14;
@@ -159,7 +161,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 198);
+            this.label6.Location = new System.Drawing.Point(43, 215);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 13;
@@ -167,7 +169,7 @@
             // 
             // sipPassword2Text
             // 
-            this.sipPassword2Text.Location = new System.Drawing.Point(163, 234);
+            this.sipPassword2Text.Location = new System.Drawing.Point(163, 251);
             this.sipPassword2Text.Name = "sipPassword2Text";
             this.sipPassword2Text.Size = new System.Drawing.Size(166, 20);
             this.sipPassword2Text.TabIndex = 12;
@@ -175,7 +177,7 @@
             // 
             // sipUser2Text
             // 
-            this.sipUser2Text.Location = new System.Drawing.Point(163, 198);
+            this.sipUser2Text.Location = new System.Drawing.Point(163, 215);
             this.sipUser2Text.Name = "sipUser2Text";
             this.sipUser2Text.Size = new System.Drawing.Size(166, 20);
             this.sipUser2Text.TabIndex = 11;
@@ -183,7 +185,7 @@
             // 
             // eraseLine2
             // 
-            this.eraseLine2.Location = new System.Drawing.Point(187, 277);
+            this.eraseLine2.Location = new System.Drawing.Point(199, 288);
             this.eraseLine2.Name = "eraseLine2";
             this.eraseLine2.Size = new System.Drawing.Size(130, 44);
             this.eraseLine2.TabIndex = 15;
@@ -195,7 +197,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(137, 170);
+            this.label7.Location = new System.Drawing.Point(137, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 16);
             this.label7.TabIndex = 16;
@@ -286,19 +288,41 @@
             // 
             // staticIPoEButton
             // 
-            this.staticIPoEButton.Location = new System.Drawing.Point(577, 254);
+            this.staticIPoEButton.Location = new System.Drawing.Point(422, 251);
             this.staticIPoEButton.Name = "staticIPoEButton";
-            this.staticIPoEButton.Size = new System.Drawing.Size(208, 79);
+            this.staticIPoEButton.Size = new System.Drawing.Size(174, 70);
             this.staticIPoEButton.TabIndex = 27;
-            this.staticIPoEButton.Text = "Configure Static IP";
+            this.staticIPoEButton.Text = "Configure Static IP VDSL";
             this.staticIPoEButton.UseVisualStyleBackColor = true;
             this.staticIPoEButton.Click += new System.EventHandler(this.staticIPoEButton_Click);
+            // 
+            // StaticIPoEEthernet
+            // 
+            this.StaticIPoEEthernet.Location = new System.Drawing.Point(616, 251);
+            this.StaticIPoEEthernet.Name = "StaticIPoEEthernet";
+            this.StaticIPoEEthernet.Size = new System.Drawing.Size(174, 70);
+            this.StaticIPoEEthernet.TabIndex = 28;
+            this.StaticIPoEEthernet.Text = "Configure Static IP Ethernet";
+            this.StaticIPoEEthernet.UseVisualStyleBackColor = true;
+            this.StaticIPoEEthernet.Click += new System.EventHandler(this.StaticIPoEEthernet_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(137, 89);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 16);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Line 1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 456);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.StaticIPoEEthernet);
             this.Controls.Add(this.staticIPoEButton);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -361,6 +385,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button staticIPoEButton;
+        private System.Windows.Forms.Button StaticIPoEEthernet;
+        private System.Windows.Forms.Label label13;
     }
 }
 

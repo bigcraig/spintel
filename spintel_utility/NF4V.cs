@@ -291,7 +291,18 @@ namespace spintel_utility
 
         }
         public void configureVoip(Browser modem,string sipDomain, string sipProxy, string login, string password,string login2,string password2)
-        {  
+        {
+            string sipDomain2, sipProxy2;
+            if (login2 == "")
+            {
+                sipDomain2 = "";
+                sipProxy2 = "";
+            }
+            else
+            {
+                sipDomain2 = sipDomain;
+                sipProxy2 = sipProxy;
+            }
             var modemURL = "http://192.168.20.1/voicesip_basic.html";
             //var sipDomain = "sip.iboss.com.au";
             //var sipProxy = sipDomain;
@@ -301,7 +312,7 @@ namespace spintel_utility
                 +sipProxy +"&proxyPort0=5060&obProxyAddr0=" 
                 + sipProxy +
                 "&obProxyPort0=5060&regAddr0=" + sipDomain +"&regPort0=5060&domainName0=" /*+sipDomain */ +
-                "&proxyAddr20=0.0.0.0&proxyPort20=5060&obProxyAddr20=0.0.0.0&obProxyPort20=5060&regAddr20=0.0.0.0&regPort20=5060&siplocalport0=5060&authName0_0="
+                "&proxyAddr20=" + sipProxy2 +   "&proxyPort20=5060&obProxyAddr20=" + sipProxy2 +   "&obProxyPort20=5060&regAddr20=" + sipDomain2 + "&regPort20=5060&siplocalport0=5060&authName0_0="
                 + login + "&password0_0=" + password +"&cidName0_0="
                 + login +"&cidNumber0_0=" 
                 + login +"&lineEnabled0_0=on&polarityreverseEnable0_0=off&codecList0_0=G711U,20,2,1:G711A,20,3,1:G729,20,1,1:G723_63,30,4,1:G726_24,20,5,1:G726_32,20,6,1:G726_16,20,7,1:G726_40,20,8,1:G722,20,9,1&authName0_1="
@@ -337,6 +348,28 @@ namespace spintel_utility
             modemURL = "http://192.168.20.1/qsetup.cmd?portId=0&ptmPriorityNorm=1&ptmPriorityHigh=1&connMode=1&burstsize=3000&enblQos=1&grpPrec=8&grpAlg=WRR&grpWght=1&prec=8&alg=WRR&wght=1&sessionKey=" + sessionKey;
             modem.Navigate(modemURL);
         }
+        public void configureStaticIPoEEth(Browser modem, string wanIpAddress, string subNetMask, string gatewayIP, string pDNS, string sDNS)
+        {
+            var modemURL = "http://192.168.20.1/qinetsetup.html";
+            modem.Navigate(modemURL);
+            string sessionKey = getSessionID(modem.CurrentHtml);
+            modemURL = "http://192.168.20.1/qethwanmode.cgi?wanType=3&sessionKey=" + sessionKey;
+            modem.Navigate(modemURL);
+            sessionKey = getSessionID(modem.CurrentHtml);
+            modemURL = "http://192.168.20.1/qethipoe.cgi?&enblEnetWan=0&ntwkPrtcl=11&enblIpVer=0&enVlanMux=1&vlanMuxId=-1&vlanMuxPr=-1&serviceName=ETH%20WAN&sessionKey=" + sessionKey;
+            modem.Navigate(modemURL);
+            sessionKey = getSessionID(modem.CurrentHtml);
+            modemURL = "http://192.168.20.1/qntwksum.cgi?enblDhcpClnt=0&wanIpAddress="
+               + wanIpAddress + "&wanSubnetMask=" + subNetMask + "&wanIntfGateway=" + gatewayIP + "&wanInfDnsPrimary="
+               + pDNS + "&wanInfDnsSecondary=" + sDNS + "&enblv4=1&enblNat=1&enblFullcone=0&enblFirewall=1&enblIgmp=0&enblMld=0&sessionKey=" + sessionKey;
+            modem.Navigate(modemURL);
+            sessionKey = getSessionID(modem.CurrentHtml);
+            modemURL = "http://192.168.20.1/qsetup.cmd?ifname=eth4&connMode=1&sessionKey=" + sessionKey;
+            modem.Navigate(modemURL);
+
+
+        }
+
     }
 }
 

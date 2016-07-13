@@ -22,6 +22,9 @@ namespace spintel_utility
 
         public string decrementIPaddress(String ipIn, uint offset)
         {
+            IPAddress iPAddressOut;
+            if (!IPAddress.TryParse(ipIn,out iPAddressOut))
+                return ("IPAddress address invalid");
             IPAddress Realip = IPAddress.Parse(ipIn);
             byte[] byteIP = Realip.GetAddressBytes();
            

@@ -104,6 +104,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -128,6 +136,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -339,7 +355,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:RamVoIP"
         "ProductCode" = "8:{2AE036F5-2A3B-469F-A9E7-0C2ABD0AE36D}"
-        "PackageCode" = "8:{1B5894B4-74B2-4573-A7C2-AD7EA1DC349D}"
+        "PackageCode" = "8:{46022A49-FBCB-425E-AA04-C7816BE4B2C9}"
         "UpgradeCode" = "8:{979CCF18-14AD-49DA-9514-43DEBF481552}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -461,7 +477,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_50CFD462DE8141E49793F32671BF6EE1"
             {
-            "Name" = "8:Ram VoIP"
+            "Name" = "8:Ram Sham VoIP"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -475,7 +491,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6AEE5AA445424BDE976668CE02D2B415"
             {
-            "Name" = "8:Ram VoIP"
+            "Name" = "8:Ram Sham VoIP"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

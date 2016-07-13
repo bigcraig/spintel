@@ -14,7 +14,9 @@ namespace spintel_utility
 {
     public partial class Form1 : Form
     {
-        string sipDomain, sipProxy, sipUser, sipPassword, sipUser2, sipPassword2;
+        string  sipUser, sipPassword, sipUser2, sipPassword2;
+        string sipDomain  = "sip.iboss.com.au";
+        string sipProxy = "sip.iboss.com.au";
         string wanIPaddress, wanGatewayIP;
         string wanSubnetMask = "255.255.255.252";
         string primaryDNS = "203.8.183.1";
@@ -26,6 +28,11 @@ namespace spintel_utility
             primaryDNSText.Text = primaryDNS;
             secondaryDNSText.Text = secondaryDNS;
             wanSubnetText.Text = wanSubnetMask;
+        }
+        public void initialiseVoIP()
+        {
+            sipDomainText.Text = sipDomain;
+            sipProxyText.Text = sipProxy;
         }
 
         private void sipDomainText_TextChanged(object sender, EventArgs e)
@@ -66,6 +73,7 @@ namespace spintel_utility
             try
             {
                 wanGatewayIPText.Text = ipAddressTools.decrementIPaddress(wanIPaddress, 1);
+               
             }
             catch (Exception ez){
                 
@@ -76,8 +84,19 @@ namespace spintel_utility
         {
             var nf4v = new NF4V();
            Browser nf10W = new Browser();
-            nf4v.initialiseModem(nf10W);
-            nf4v.configureStaticIPoEVDSL(nf10W, wanIPaddress, wanSubnetMask, wanGatewayIP, primaryDNS, secondaryDNS);
+            Status.Text = "Configuring IPoE VDSL";
+           Status.Text = nf4v.initialiseModem(nf10W);
+            if (Status.Text == "Configuration in progress")
+            {
+                Status.Text = "Configuring IPoE";
+                nf4v.configureStaticIPoEVDSL(nf10W, wanIPaddress, wanSubnetMask, wanGatewayIP, primaryDNS, secondaryDNS);
+                Status.Text = "IPOE VDSL Configured";
+
+            }
+                nf10W.Close();
+
+              
+           
 
 
             //   wanGatewayIP = iPaddressTools.incrementIPaddress()
@@ -86,6 +105,24 @@ namespace spintel_utility
         private void wanGatewayIPText_TextChanged(object sender, EventArgs e)
         {
             wanGatewayIP = wanGatewayIPText.Text;
+        }
+
+        private void StaticIPoEEthernet_Click(object sender, EventArgs e)
+        {
+            var nf4v = new NF4V();
+            Browser nf10W = new Browser();
+            Status.Text = "Configuring IPoE Ethernet";
+            Status.Text = nf4v.initialiseModem(nf10W);
+            if (Status.Text == "Configuration in progress")
+            {
+                Status.Text = " Configuring IPoE";
+                nf4v.configureStaticIPoEEth(nf10W, wanIPaddress, wanSubnetMask, wanGatewayIP, primaryDNS, secondaryDNS);
+                Status.Text = "IPOE Ethernet Configured";
+
+            }
+            nf10W.Close();
+
+
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -110,6 +147,7 @@ namespace spintel_utility
            //  var nf4v = new NF4V();
             // nf4v.nf4Vsetup();
             this.intialiseIPoE();
+            this.initialiseVoIP();
             
         }
 
